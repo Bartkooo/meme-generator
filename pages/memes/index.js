@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 export default function Memes({ memes }) {
@@ -9,8 +10,11 @@ export default function Memes({ memes }) {
     </li>
   ))
 
+  const { back } = useRouter()
+
   return(
     <>
+      <button onClick={back}>Back to main page</button>
       <h1>memy</h1>
       <ul>
         {ListElements}
